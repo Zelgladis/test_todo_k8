@@ -30,7 +30,7 @@ spec:
           protocol: TCP
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: local
+          value: do
         - name: DATABASE_USER
           value: program
         - name: DATABASE_PASSWORD
