@@ -12,3 +12,16 @@ spec:
     targetPort: http
   selector:
     app: postgres
+ 
+kind: Service
+metadata:
+  name: postgres-port
+  namespace: myspace
+spec:
+  type: NodePort
+  ports:
+  - name: postgres
+    port: 5432
+    nodePort: 30432
+  selector:
+    app: postgres
