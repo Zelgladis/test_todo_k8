@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: postgres-service
+  namespace: myspace
+spec:
+  ports:
+  - name: http
+    port: 5432
+    targetPort: http
+  selector:
+    app: postgres
