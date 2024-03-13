@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: backend-todo
-        image: ??????????????????
+        image: ghcr.io/zelgladis/test_back:latest
         imagePullPolicy: IfNotPresent
         resources:
           limits:
@@ -29,9 +29,15 @@ spec:
           name: http
           protocol: TCP
         ENV:
-        - name: POSTGRES_USER
+        - name: SPRING_PROFILES_ACTIVE
+          value: do
+        - name: DATABASE_USER
           value: program
-        - name: POSTGRES_PASSWORD
+        - name: DATABASE_PASSWORD
           value: test
-        - name: POSTGRES_DB
+        - name: DATABSE_PORT
+          value: '5432'
+        - name: DATABASE_URL
+          value: postgres.myspace.svc.cluster.local
+        - name: DATABASE_NAME
           value: todo_list
