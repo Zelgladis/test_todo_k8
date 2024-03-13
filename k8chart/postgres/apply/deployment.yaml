@@ -27,7 +27,7 @@ spec:
             memory: 128Mi
         ports:
         - containerPort: 5432
-          name: https
+          name: http
           protocol: TCP
         env:
         - name: POSTGRES_USER
