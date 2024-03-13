@@ -29,7 +29,7 @@ spec:
         - containerPort: 5432
           name: http
           protocol: TCP
-        ENV:
+        env:
         - name: POSTGRES_USER
           value: program
         - name: POSTGRES_PASSWORD
