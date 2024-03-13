@@ -28,7 +28,7 @@ spec:
         - containerPort: 8080
           name: http
           protocol: TCP
-        ENV:
+        env:
         - name: SPRING_PROFILES_ACTIVE
           value: do
         - name: DATABASE_USER
