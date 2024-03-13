@@ -38,7 +38,7 @@ spec:
         - name: DATABSE_PORT
           value: '5432'
         - name: DATABASE_URL
-          value: postgres.myspace.svc.cluster.local
+          value: postgres-service.myspace.svc.cluster.local
         - name: DATABASE_NAME
           value: todo_list
       imagePullSecrets:
