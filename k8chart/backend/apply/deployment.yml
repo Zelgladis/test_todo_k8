@@ -35,7 +35,7 @@ spec:
           value: program
         - name: DATABASE_PASSWORD
           value: test
-        - name: DATABSE_PORT
+        - name: DATABASE_PORT
           value: '5432'
         - name: DATABASE_URL
           value: postgres-service.myspace.svc.cluster.local
