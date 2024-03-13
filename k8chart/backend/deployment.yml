@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-todo
+  namespace: myspace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-todo
+  template:
+    metadata:
+      labels:
+        app: backend-todo
+    spec:
+      containers:
+      - name: backend-todo
+        image: ??????????????????
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        ENV:
+        - name: POSTGRES_USER
+          value: program
+        - name: POSTGRES_PASSWORD
+          value: test
+        - name: POSTGRES_DB
+          value: todo_list

@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: postgres
-  namespace: myspace
+  name: {{ .Chart.Name }}-dployment
+  namespace: {{ .values.space }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: postgres
+      app: {{ .Chart.Name }}
   template:
     metadata:
       labels:
-        app: postgres
+        app: {{ .Chart.Name }}
     spec:
       volumes:
       containers:
-      - name: postgres
-        image: postgres:13
+      - name: {{ .Chart.Name }}
+        image: {{ .values.image.name }}:{{ .values.image.version }}
         imagePullPolicy: IfNotPresent
         resources:
           limits:
@@ -26,13 +26,13 @@ spec:
             cpu: 100m
             memory: 128Mi
         ports:
-        - containerPort: 5432
+        - containerPort: {{ .values.port }}
           name: http
           protocol: TCP
         ENV:
         - name: POSTGRES_USER
-          value: program
+          value: {{ .values.database.default.user}}
         - name: POSTGRES_PASSWORD
-          value: test
+          value: {{ .values.database.default.password}}
         - name: POSTGRES_DB
-          value: todo_list
+          value: {{ .values.database.default.name}}

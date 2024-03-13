@@ -1,0 +1,11 @@
+port: 5432
+space: myspace
+image:
+  name: postgres
+  version: 13
+
+database:
+  default:
+    name: todo_list
+    user: program
+    password: test
