@@ -7,9 +7,9 @@ metadata:
     app: postgres
 spec:
   ports:
-  - name: http
+  - name: https
     port: 5432
-    targetPort: http
+    targetPort: https
   selector:
     app: postgres
  
