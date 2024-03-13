@@ -30,7 +30,7 @@ spec:
           protocol: TCP
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: docker
+          value: local
         - name: DATABASE_USER
           value: program
         - name: DATABASE_PASSWORD
