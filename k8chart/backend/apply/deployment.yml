@@ -30,15 +30,15 @@ spec:
           protocol: TCP
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: do
+          value: docker
         - name: DATABASE_USER
           value: program
         - name: DATABASE_PASSWORD
           value: test
         - name: DATABASE_PORT
-          value: '5432'
+          value: "5432"
         - name: DATABASE_URL
-          value: postgres-service.myspace.svc.cluster.local
+          value: postgres
         - name: DATABASE_NAME
           value: todo_list
       imagePullSecrets:
