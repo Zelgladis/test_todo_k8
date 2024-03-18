@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-todo
+  namespace: myspace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-todo
+  template:
+    metadata:
+      labels:
+        app: frontend-todo
+    spec:
+      containers:
+      - name: frontend-todo
+        image: ghcr.io/zelgladis/test_front:v33
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        env:
+        - name: SOME_VAR
+          value: docker
+      imagePullSecrets:
+        - name: regcred
