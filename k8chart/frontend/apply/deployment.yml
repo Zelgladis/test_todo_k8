@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend-todo
-        image: ghcr.io/zelgladis/test_front_kuber:latest
+        image: ghcr.io/**GIT_USERNAME**/test_front_kuber:latest
         imagePullPolicy: IfNotPresent
         resources:
           limits:
