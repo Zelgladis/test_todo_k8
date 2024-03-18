@@ -13,15 +13,3 @@ spec:
   selector:
     app: frontend-todo
 
-kind: Service
-metadata:
-  name: frontend-nodeport
-  namespace: myspace
-spec:
-  type: NodePort
-  ports:
-  - name: nodeport
-    port: 8080
-    nodePort: 30081
-  selector:
-    app: frontend-todo
